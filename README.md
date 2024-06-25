@@ -1,0 +1,1 @@
+# give-separate-class-to-every-page-in-shopify
