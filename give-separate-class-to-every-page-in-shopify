@@ -1,0 +1,24 @@
+{%- assign page_class = ' ' -%}
+
+{%- case template.name -%}
+  {%- when 'index' -%}
+    {%- assign page_class = ' homepage' -%}
+  {%- when 'page' -%}
+    {%- assign page_class = ' page-' | append: page.handle -%}
+  {%- when 'product' -%}
+    {%- assign page_class = ' product-' | append: product.handle -%}
+  {%- when 'collection' -%}
+    {%- assign page_class = ' collection-' | append: collection.handle -%}
+  {%- when 'cart' -%}
+    {%- assign page_class = ' cart' -%}
+  {%- when 'blog' -%}
+    {%- assign page_class = ' blog' -%}
+  {%- when 'article' -%}
+    {%- assign page_class = ' article-' | append: article.handle -%}
+  {%- else -%}
+    {%- assign page_class = ' other' -%}
+{%- endcase -%}
+
+
+
+<body  class=" {{ page_class }} gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
